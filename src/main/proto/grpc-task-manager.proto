@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "com.taskmanager.api.grpc.generated";
+option java_outer_classname = "GrpcTaskManager";
+
+package taskmanager.api.grpc.v1;
+
+service TaskManagerController {
+
+  rpc GetTasks(google.protobuf.Empty) returns (TaskList) {}
+
+  rpc CreateTask(CreateTaskRequest) returns (Task) {}
+
+  rpc FindTaskById(FindTaskByIdRequest) returns (Task) {}
+
+  rpc UpdateTask(UpdateTaskRequest) returns (Task) {}
+
+  rpc CompleteTask(CompleteTaskRequest) returns (Task) {}
+
+  rpc Chat(ChatRequest) returns (ChatResponse) {}
+}
+
+message Task {
+  string id = 1;
+  string title = 2;
+  optional string description = 3;
+  bool completed = 4;
+}
+
+message TaskList {
+  repeated Task tasks = 1;
+}
+
+message CreateTaskRequest {
+  string title = 1;
+  optional string description = 2;
+}
+
+message FindTaskByIdRequest {
+  string id = 1;
+}
+
+message UpdateTaskRequest {
+  string id = 1;
+  string title = 2;
+  optional string description = 3;
+}
+
+message CompleteTaskRequest {
+  string id = 1;
+}
+
+message ChatRequest {
+  string prompt = 1;
+}
+
+message ChatResponse {
+  string response = 1;
+}

@@ -1,0 +1,53 @@
+[versions]
+shadowPlugin = "8.1.1"
+micronautPlugin = "4.4.4"
+sonarqubePlugin = "6.0.1.5171"
+protobufPlugin = "0.9.4"
+lombok = "1.18.36"
+anthropic = "0.2.0"
+langchain4j = "1.0.0-beta1"
+logback = "1.5.15"
+snakeyaml = "2.2"
+junit = "5.11.3"
+assertj = "3.27.3"
+mockito = "5.15.2"
+jackson = "2.18.2"
+javaxAnnotation = "1.3.2"
+protoc = "3.25.5"
+grpcJava = "1.68.1"
+testcontainers = "1.20.6"
+
+[libraries]
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+anthropic-java = { module = "com.anthropic:anthropic-java", version.ref = "anthropic" }
+langchain4j = { module = "dev.langchain4j:langchain4j", version.ref = "langchain4j" }
+langchain4j-anthropic = { module = "dev.langchain4j:langchain4j-anthropic", version.ref = "langchain4j" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+snakeyaml = { module = "org.yaml:snakeyaml", version.ref = "snakeyaml" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+javax-annotation = { module = "javax.annotation:javax.annotation-api", version.ref = "javaxAnnotation" }
+grpc-java = { module = "io.grpc:protoc-gen-grpc-java", version.ref = "grpcJava" }
+protoc = { module = "com.google.protobuf:protoc", version.ref = "protoc" }
+testcontainers-core = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }  # Added
+testcontainers-junit = { module = "org.testcontainers:junit-jupiter", version.ref = "testcontainers" }  # Added
+
+# Micronaut dependencies' versions are meneaged by micronaut plugin
+micronaut-data-processor = { module = "io.micronaut.data:micronaut-data-document-processor" }
+micronaut-http-validation = { module = "io.micronaut:micronaut-http-validation" }
+micronaut-serde-processor = { module = "io.micronaut.serde:micronaut-serde-processor" }
+micronaut-reactor = { module = "io.micronaut.reactor:micronaut-reactor" }
+micronaut-serde-jackson = { module = "io.micronaut.serde:micronaut-serde-jackson" }
+micronaut-mongo-sync = { module = "io.micronaut.mongodb:micronaut-mongo-sync" }
+micronaut-http-client = { module = "io.micronaut:micronaut-http-client" }
+micronaut-discovery = { module = "io.micronaut:micronaut-discovery-core" }
+micronaut-grpc = { module = "io.micronaut.grpc:micronaut-grpc-runtime" }
+
+[plugins]
+shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadowPlugin" }
+micronaut-application = { id = "io.micronaut.application", version.ref = "micronautPlugin" }
+micronaut-aot = { id = "io.micronaut.aot", version.ref = "micronautPlugin" }
+sonarqube = { id = "org.sonarqube", version.ref = "sonarqubePlugin" }
+protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }

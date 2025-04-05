@@ -1,0 +1,19 @@
+micronaut:
+  application:
+    name: taskmanager
+  server:
+    thread-selection: auto
+
+mongodb:
+  uri:
+  package-names: com.taskmanager.infrastructure.persistence.entity
+  connection-timeout: 1000
+
+grpc:
+  server:
+    port: 8080
+    keep-alive-time: 3h
+    max-inbound-message-size: 1024
+
+anthropic:
+  api-key:
